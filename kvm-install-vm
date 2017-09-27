@@ -295,6 +295,10 @@ pushd ${IMAGEDIR}/${VMNAME} > /dev/null
     cat > $USER_DATA << _EOF_
 #cloud-config
 
+password: password123
+chpasswd: { expire: False }
+ssh_pwauth: True
+
 # Hostname management
 preserve_hostname: False
 hostname: ${VMNAME}
